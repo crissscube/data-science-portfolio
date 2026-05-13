@@ -1,0 +1,24 @@
+# Raw data (too large for git)
+data/raw/
+*.csv
+*.xlsx
+*.parquet
+*.json
+
+# Exceptions — allow small sample files
+!data/sample/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
