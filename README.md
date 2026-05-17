@@ -20,6 +20,7 @@ Científico de datos con formación práctica en análisis exploratorio, machine
 | 04 | [Análisis de Sentimientos IMDB](04_nlp/) | NLP | NLTK · TF-IDF · scikit-learn | ✅ Completo |
 | 05 | [Sentiment Analyzer App](05_dashboard/) | Dashboard Interactivo | Streamlit · NLTK · scikit-learn | ✅ Completo |
 | 06 | [Customer LTV & RFM Segmentation](06_business/) | Análisis de Negocio | pandas · scikit-learn · K-Means | ✅ Completo |
+| 07 | [Digit Recognition with CNN](07_deep_learning/) | Deep Learning | PyTorch · torchvision · CNN | ✅ Completo |
 
 ---
 
@@ -47,7 +48,8 @@ data-science-portfolio/
 ├── 03_time_series/       # Forecasting — ARIMA, SARIMA, Prophet
 ├── 04_nlp/               # Análisis de sentimientos — TF-IDF + clasificadores
 ├── 05_dashboard/         # App interactiva de sentimientos con Streamlit
-└── 06_business/          # RFM segmentation + LTV + ROI de retención
+├── 06_business/          # RFM segmentation + LTV + ROI de retención
+└── 07_deep_learning/     # CNN con PyTorch — reconocimiento de dígitos (99.5%+ accuracy)
 ```
 
 ---
