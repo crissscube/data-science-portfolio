@@ -22,6 +22,7 @@ Científico de datos con formación práctica en análisis exploratorio, machine
 | 06 | [Customer LTV & RFM Segmentation](06_business/) | Análisis de Negocio | pandas · scikit-learn · K-Means | ✅ Completo |
 | 07 | [Digit Recognition with CNN](07_deep_learning/) | Deep Learning | PyTorch · torchvision · CNN | ✅ Completo |
 | 08 | [Statistics for Data Science](08_statistics/) | Estadística | SciPy · statsmodels · Hypothesis Testing · A/B Testing · Bootstrap · Bayesian | ✅ Completo |
+| 09 | [NYC Taxi — Big Data Analytics](09_big_data/) | Big Data | PySpark · Spark SQL · Docker · Parquet | ✅ Completo |
 
 ---
 
@@ -32,6 +33,8 @@ Científico de datos con formación práctica en análisis exploratorio, machine
 **Análisis & ML:** pandas · numpy · scikit-learn · statsmodels
 
 **Deep Learning:** TensorFlow · PyTorch
+
+**Big Data:** PySpark · Spark SQL · Docker
 
 **Visualización:** matplotlib · seaborn · plotly · Streamlit
 
@@ -51,7 +54,8 @@ data-science-portfolio/
 ├── 05_dashboard/         # App interactiva de sentimientos con Streamlit
 ├── 06_business/          # RFM segmentation + LTV + ROI de retención
 ├── 07_deep_learning/     # CNN con PyTorch — reconocimiento de dígitos (99.5%+ accuracy)
-└── 08_statistics/        # Toolkit estadístico — hipótesis, A/B testing, regresión, bootstrap, bayesiano
+├── 08_statistics/        # Toolkit estadístico — hipótesis, A/B testing, regresión, bootstrap, bayesiano
+└── 09_big_data/          # PySpark sobre ~9.5M viajes de taxi NYC — Spark SQL + Docker
 ```
 
 ---

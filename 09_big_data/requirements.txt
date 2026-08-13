@@ -1,0 +1,6 @@
+# The project runs in the Docker image quay.io/jupyter/pyspark-notebook:spark-3.5.0,
+# which already includes PySpark, pandas and matplotlib. These are listed for reference
+# and for running the notebook outside Docker.
+pyspark==3.5.0
+pandas
+matplotlib

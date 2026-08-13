@@ -1,0 +1,20 @@
+services:
+  spark-notebook:
+    # Official Jupyter image with PySpark + Java preinstalled (pinned for reproducibility)
+    image: quay.io/jupyter/pyspark-notebook:spark-3.5.0
+    container_name: nyc_taxi_spark
+    ports:
+      - "8888:8888"   # Jupyter UI  -> open http://localhost:8888
+      - "4040:4040"   # Spark UI    -> open http://localhost:4040 while a job runs
+    volumes:
+      # Mount this project folder into the container's work directory.
+      # Notebooks and data live on your PC but are visible inside the container.
+      - ./:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes           # use the modern JupyterLab interface
+      - JUPYTER_TOKEN=bigdata            # simple fixed login token (no random URL)
+    # Give the Spark driver enough memory for ~9M rows locally
+    deploy:
+      resources:
+        limits:
+          memory: 6g
