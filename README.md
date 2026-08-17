@@ -1,63 +1,63 @@
 # Data Science Portfolio — Cristian Cubero
 
-> Portafolio de proyectos de ciencia de datos aplicados a problemas reales de negocio.
+> A portfolio of data science projects applied to real-world business problems.
 
-## Sobre mí
-Científico de datos con formación práctica en análisis exploratorio, machine learning, series de tiempo, NLP, estadística inferencial y visualización de datos. Me enfoco en extraer insights accionables y comunicar resultados de forma clara.
+## About me
+Data scientist with hands-on experience in exploratory data analysis, machine learning, time series, NLP, inferential statistics, big data, and data visualization. I focus on extracting actionable insights and communicating results clearly.
 
 - **Email:** cubero_cristian09@hotmail.com
 - **GitHub:** [crissscube](https://github.com/crissscube)
 
 ---
 
-## Proyectos
+## Projects
 
-| # | Proyecto | Tipo | Tecnologías | Estado |
-|---|----------|------|-------------|--------|
-| 01 | [Análisis Exploratorio — IBM HR Attrition](01_eda/) | EDA | pandas · matplotlib · seaborn | ✅ Completo |
-| 02 | [Predicción de Rotación de Empleados](02_machine_learning/) | Machine Learning | scikit-learn · LogReg · RF · GBM | ✅ Completo |
-| 03 | [Forecasting de Pasajeros Aéreos](03_time_series/) | Series de Tiempo | statsmodels · ARIMA · SARIMA · Prophet | ✅ Completo |
-| 04 | [Análisis de Sentimientos IMDB](04_nlp/) | NLP | NLTK · TF-IDF · scikit-learn | ✅ Completo |
-| 05 | [Sentiment Analyzer App](05_dashboard/) | Dashboard Interactivo | Streamlit · NLTK · scikit-learn | ✅ Completo |
-| 06 | [Customer LTV & RFM Segmentation](06_business/) | Análisis de Negocio | pandas · scikit-learn · K-Means | ✅ Completo |
-| 07 | [Digit Recognition with CNN](07_deep_learning/) | Deep Learning | PyTorch · torchvision · CNN | ✅ Completo |
-| 08 | [Statistics for Data Science](08_statistics/) | Estadística | SciPy · statsmodels · Hypothesis Testing · A/B Testing · Bootstrap · Bayesian | ✅ Completo |
-| 09 | [NYC Taxi — Big Data Analytics](09_big_data/) | Big Data | PySpark · Spark SQL · Docker · Parquet | ✅ Completo |
+| # | Project | Type | Technologies | Status |
+|---|---------|------|--------------|--------|
+| 01 | [Exploratory Data Analysis — IBM HR Attrition](01_eda/) | EDA | pandas · matplotlib · seaborn | ✅ Complete |
+| 02 | [Employee Attrition Prediction](02_machine_learning/) | Machine Learning | scikit-learn · LogReg · RF · GBM | ✅ Complete |
+| 03 | [Air Passengers Forecasting](03_time_series/) | Time Series | statsmodels · ARIMA · SARIMA · Prophet | ✅ Complete |
+| 04 | [IMDB Sentiment Analysis](04_nlp/) | NLP | NLTK · TF-IDF · scikit-learn | ✅ Complete |
+| 05 | [Sentiment Analyzer App](05_dashboard/) | Interactive Dashboard | Streamlit · NLTK · scikit-learn | ✅ Complete |
+| 06 | [Customer LTV & RFM Segmentation](06_business/) | Business Analytics | pandas · scikit-learn · K-Means | ✅ Complete |
+| 07 | [Digit Recognition with CNN](07_deep_learning/) | Deep Learning | PyTorch · torchvision · CNN | ✅ Complete |
+| 08 | [Statistics for Data Science](08_statistics/) | Statistics | SciPy · statsmodels · Hypothesis Testing · A/B Testing · Bootstrap · Bayesian | ✅ Complete |
+| 09 | [NYC Taxi — Big Data Analytics](09_big_data/) | Big Data | PySpark · Spark SQL · Docker · Parquet | ✅ Complete |
 
 ---
 
-## Stack Tecnológico
+## Tech Stack
 
-**Lenguajes:** Python · SQL
+**Languages:** Python · SQL
 
-**Análisis & ML:** pandas · numpy · scikit-learn · statsmodels
+**Analysis & ML:** pandas · numpy · scikit-learn · statsmodels
 
 **Deep Learning:** TensorFlow · PyTorch
 
 **Big Data:** PySpark · Spark SQL · Docker
 
-**Visualización:** matplotlib · seaborn · plotly · Streamlit
+**Visualization:** matplotlib · seaborn · plotly · Streamlit
 
-**Entorno:** Jupyter · VSCode · Git
+**Environment:** Jupyter · VSCode · Git
 
 ---
 
-## Estructura del Repositorio
+## Repository Structure
 
 ```
 data-science-portfolio/
 │
-├── 01_eda/               # Análisis exploratorio de datos — IBM HR
-├── 02_machine_learning/  # Predicción de attrition — Logistic Regression, RF, GBM
+├── 01_eda/               # Exploratory data analysis — IBM HR
+├── 02_machine_learning/  # Attrition prediction — Logistic Regression, RF, GBM
 ├── 03_time_series/       # Forecasting — ARIMA, SARIMA, Prophet
-├── 04_nlp/               # Análisis de sentimientos — TF-IDF + clasificadores
-├── 05_dashboard/         # App interactiva de sentimientos con Streamlit
-├── 06_business/          # RFM segmentation + LTV + ROI de retención
-├── 07_deep_learning/     # CNN con PyTorch — reconocimiento de dígitos (99.5%+ accuracy)
-├── 08_statistics/        # Toolkit estadístico — hipótesis, A/B testing, regresión, bootstrap, bayesiano
-└── 09_big_data/          # PySpark sobre ~9.5M viajes de taxi NYC — Spark SQL + Docker
+├── 04_nlp/               # Sentiment analysis — TF-IDF + classifiers
+├── 05_dashboard/         # Interactive sentiment app with Streamlit
+├── 06_business/          # RFM segmentation + LTV + retention ROI
+├── 07_deep_learning/     # CNN with PyTorch — digit recognition (99.5%+ accuracy)
+├── 08_statistics/        # Statistical toolkit — hypothesis testing, A/B testing, regression, bootstrap, Bayesian
+└── 09_big_data/          # PySpark on ~9.5M NYC taxi trips — Spark SQL + Docker
 ```
 
 ---
 
-*Actualizado: Agosto 2026*
+*Last updated: August 2026*
