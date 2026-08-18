@@ -23,6 +23,7 @@ Data scientist with hands-on experience in exploratory data analysis, machine le
 | 07 | [Digit Recognition with CNN](07_deep_learning/) | Deep Learning | PyTorch · torchvision · CNN | ✅ Complete |
 | 08 | [Statistics for Data Science](08_statistics/) | Statistics | SciPy · statsmodels · Hypothesis Testing · A/B Testing · Bootstrap · Bayesian | ✅ Complete |
 | 09 | [NYC Taxi — Big Data Analytics](09_big_data/) | Big Data | PySpark · Spark SQL · Docker · Parquet | ✅ Complete |
+| 10 | [MLOps — Model Serving with FastAPI & Docker](10_mlops/) | MLOps | FastAPI · Docker · scikit-learn · joblib | ✅ Complete |
 
 ---
 
@@ -35,6 +36,8 @@ Data scientist with hands-on experience in exploratory data analysis, machine le
 **Deep Learning:** TensorFlow · PyTorch
 
 **Big Data:** PySpark · Spark SQL · Docker
+
+**MLOps & Deployment:** FastAPI · Docker · REST APIs
 
 **Visualization:** matplotlib · seaborn · plotly · Streamlit
 
@@ -55,7 +58,8 @@ data-science-portfolio/
 ├── 06_business/          # RFM segmentation + LTV + retention ROI
 ├── 07_deep_learning/     # CNN with PyTorch — digit recognition (99.5%+ accuracy)
 ├── 08_statistics/        # Statistical toolkit — hypothesis testing, A/B testing, regression, bootstrap, Bayesian
-└── 09_big_data/          # PySpark on ~9.5M NYC taxi trips — Spark SQL + Docker
+├── 09_big_data/          # PySpark on ~9.5M NYC taxi trips — Spark SQL + Docker
+└── 10_mlops/             # Model serving — FastAPI REST API containerized with Docker
 ```
 
 ---

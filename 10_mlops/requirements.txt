@@ -1,0 +1,6 @@
+# Pinned versions for reproducibility. scikit-learn MUST match the version
+# used to train model.pkl, or loading the artifact can fail or misbehave.
+fastapi==0.128.8
+uvicorn[standard]==0.39.0
+scikit-learn==1.6.1
+joblib==1.5.3
