@@ -1,0 +1,455 @@
+# Golden set -- the measuring instrument for every experiment in this project.
+#
+# Written before the retrieval improvements exist, on purpose. A question set
+# authored after the fact drifts toward whatever the system already answers
+# well, and the resulting numbers mean nothing.
+#
+# Seven of these questions are unanswerable from this corpus and six ask for
+# figures buried in financial tables. Both groups are expected to score badly.
+# They are here because a retrieval system that cannot tell "I don't know" from
+# "here is a plausible number" is dangerous in a financial setting, and the
+# honest way to report that is to measure it.
+#
+# Fields
+#   id                stable identifier; never renumber, results reference it
+#   category          see the taxonomy below
+#   question          asked verbatim to the system
+#   scope             where the answer should live; null when unconstrained
+#   expected_answer   filled in by hand during review -- the human ground truth
+#   gold_chunk_ids    chunks that genuinely support the answer, set in review
+#   must_abstain      true when the correct behaviour is refusing to answer
+#   status            draft | reviewed  -- only reviewed rows count in results
+#
+# Categories
+#   factual_single        one fact, one document
+#   comparative_temporal  same issuer, different fiscal years
+#   comparative_cross     different issuers, same year
+#   acronym_literal       rare proper nouns dense retrieval tends to blur
+#   numeric               figures that live in tables
+#   unanswerable          not in the corpus; abstaining is the right answer
+#   multi_hop             requires combining separate chunks
+
+questions:
+
+  # --- factual_single -------------------------------------------------------
+
+  - id: q001
+    category: factual_single
+    question: What does NVIDIA say about its dependence on third-party foundries to manufacture its products?
+    scope: {ticker: NVDA, fiscal_year: 2024, item: "1A"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q002
+    category: factual_single
+    question: Which acquisition expanded AMD into adaptive computing and FPGA products?
+    # Item scope removed during review: it was set to Item 1, but of the 51
+    # chunks naming Xilinx in this filing only 2 sit there, against 8 in Item 7.
+    # A scope that excludes where the answer lives measures the scope, not the
+    # retriever.
+    scope: {ticker: AMD, fiscal_year: 2022}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q003
+    category: factual_single
+    question: How does Qualcomm describe the relationship between its licensing segment and its semiconductor segment?
+    scope: {ticker: QCOM, fiscal_year: 2024, item: "1"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q004
+    category: factual_single
+    question: What does Micron say about the cyclical nature of memory pricing and industry supply?
+    scope: {ticker: MU, fiscal_year: 2024, item: "1A"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q005
+    category: factual_single
+    question: What are Broadcom's reportable business segments?
+    # Item scope removed during review: the segments are declared in Item 7's
+    # overview, not in Item 1. Same mistake as q002 -- assuming the business
+    # description holds every fact about the business.
+    scope: {ticker: AVGO, fiscal_year: 2023}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q006
+    category: factual_single
+    question: What risks does NVIDIA identify around inventory levels and long-term supply commitments?
+    scope: {ticker: NVDA, fiscal_year: 2023, item: "1A"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q007
+    category: factual_single
+    question: How does AMD describe competition in the server and data center processor market?
+    # Item scope removed during review: competition is described in Item 1, not only as a risk in 1A.
+    scope: {ticker: AMD, fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q008
+    category: factual_single
+    question: What does Qualcomm say about revenue concentration among a small number of customers?
+    scope: {ticker: QCOM, fiscal_year: 2023, item: "1A"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q009
+    category: factual_single
+    question: What memory technologies does Micron design and manufacture?
+    scope: {ticker: MU, fiscal_year: 2023, item: "1"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q010
+    category: factual_single
+    question: What risks does Broadcom identify from its acquisition strategy and integration of acquired businesses?
+    scope: {ticker: AVGO, fiscal_year: 2024, item: "1A"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  # --- comparative_temporal -------------------------------------------------
+
+  - id: q011
+    category: comparative_temporal
+    question: How did NVIDIA's disclosure of export control risk change between fiscal 2022 and fiscal 2024?
+    # Item scope removed during review: export controls also run through Item 7 and the notes.
+    scope: {ticker: NVDA}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q012
+    category: comparative_temporal
+    question: What risks related to artificial intelligence appear in AMD's 2024 filing that were absent in 2021?
+    scope: {ticker: AMD, item: "1A"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q013
+    category: comparative_temporal
+    question: How did Micron's discussion of the CHIPS and Science Act change between fiscal 2022 and fiscal 2024?
+    scope: {ticker: MU}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q014
+    category: comparative_temporal
+    question: Did Qualcomm's description of its dependence on its largest customer change between fiscal 2021 and fiscal 2024?
+    # Item scope removed during review: the customer relationship is detailed in Item 7 and the notes.
+    scope: {ticker: QCOM}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q015
+    category: comparative_temporal
+    question: How did NVIDIA's description of its data center business change from fiscal 2021 to fiscal 2024?
+    # Item scope removed during review: segment performance over time lives in Item 7.
+    scope: {ticker: NVDA}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q016
+    category: comparative_temporal
+    question: How did AMD's disclosures about the Xilinx acquisition change between fiscal 2022 and fiscal 2024?
+    scope: {ticker: AMD}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  # --- comparative_cross ----------------------------------------------------
+
+  - id: q017
+    category: comparative_cross
+    question: In fiscal 2024, which companies name TSMC as a manufacturing dependency and how do they describe that risk?
+    scope: {fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q018
+    category: comparative_cross
+    question: How do NVIDIA and AMD differ in how they describe competition in AI accelerators in fiscal 2024?
+    scope: {fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q019
+    category: comparative_cross
+    question: Compare how Micron and Broadcom describe customer concentration risk in fiscal 2024.
+    # Item scope removed during review: concentration figures sit in Item 7 and the notes.
+    scope: {fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q020
+    category: comparative_cross
+    question: Which companies describe restrictions on exports to China as a material risk in fiscal 2023?
+    scope: {fiscal_year: 2023, item: "1A"}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q021
+    category: comparative_cross
+    question: How do AMD and Qualcomm each describe their manufacturing model in fiscal 2023?
+    scope: {fiscal_year: 2023}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  # --- acronym_literal ------------------------------------------------------
+  # Dense retrieval blurs rare proper nouns into their general topic. These are
+  # the cases BM25 should rescue once hybrid retrieval exists.
+
+  - id: q022
+    category: acronym_literal
+    question: What does AMD say specifically about TSMC?
+    scope: {ticker: AMD, fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q023
+    category: acronym_literal
+    question: What does Micron say about the CHIPS and Science Act?
+    scope: {ticker: MU}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q024
+    category: acronym_literal
+    question: What does NVIDIA disclose about Mellanox?
+    scope: {ticker: NVDA}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q025
+    category: acronym_literal
+    # Originally phrased "What is Nuvia and why does Qualcomm mention it?".
+    # Split during review: the filings never describe Nuvia's business, so half
+    # the question was unanswerable and the item could not be scored either way.
+    question: Why do Qualcomm's filings discuss Nuvia?
+    scope: {ticker: QCOM}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q026
+    category: acronym_literal
+    question: What does Micron say about HBM, high bandwidth memory?
+    scope: {ticker: MU, fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  # --- numeric --------------------------------------------------------------
+  # Expected to score worst. Figures live in tables that survive text extraction
+  # as unlabelled runs of digits, and the answer is reported as such.
+
+  - id: q027
+    category: numeric
+    question: What was NVIDIA's total revenue in fiscal 2024?
+    scope: {ticker: NVDA, fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q028
+    category: numeric
+    question: How much did AMD spend on research and development in fiscal 2023?
+    scope: {ticker: AMD, fiscal_year: 2023}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q029
+    category: numeric
+    question: What was Micron's gross margin in fiscal 2023?
+    scope: {ticker: MU, fiscal_year: 2023}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q030
+    category: numeric
+    question: How much did Broadcom spend repurchasing its own shares in fiscal 2024?
+    scope: {ticker: AVGO, fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q031
+    category: numeric
+    question: What was Qualcomm's licensing segment revenue in fiscal 2024?
+    scope: {ticker: QCOM, fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q032
+    category: numeric
+    question: How much did NVIDIA's data center revenue grow from fiscal 2023 to fiscal 2024?
+    scope: {ticker: NVDA}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  # --- unanswerable ---------------------------------------------------------
+  # The correct answer is a refusal. q036 is the sharpest of these: Apple appears
+  # throughout Qualcomm's filings as a customer, so the corpus is full of
+  # Apple-adjacent text that will retrieve well and tempt a confident answer.
+
+  - id: q033
+    category: unanswerable
+    question: What is NVIDIA's revenue forecast for fiscal 2026?
+    scope: null
+    expected_answer: "Not in the corpus. Filings cover fiscal 2021-2024 and do not contain forward guidance for fiscal 2026."
+    gold_chunk_ids: []
+    must_abstain: true
+    status: draft
+
+  - id: q034
+    category: unanswerable
+    question: How many employees does Samsung have?
+    scope: null
+    expected_answer: "Not in the corpus. Samsung is not one of the six issuers covered."
+    gold_chunk_ids: []
+    must_abstain: true
+    status: draft
+
+  - id: q035
+    category: unanswerable
+    question: What was AMD's share price on March 15, 2025?
+    scope: null
+    expected_answer: "Not in the corpus. Filings do not report daily share prices, and the date falls outside the period covered."
+    gold_chunk_ids: []
+    must_abstain: true
+    status: draft
+
+  - id: q036
+    category: unanswerable
+    question: What does Apple's annual report say about its chip supply risk?
+    scope: null
+    expected_answer: "Not in the corpus. Apple appears only as a customer named in other issuers' filings; its own annual report is not included."
+    gold_chunk_ids: []
+    must_abstain: true
+    status: draft
+
+  - id: q037
+    category: unanswerable
+    question: What is the CEO's personal view on the future of quantum computing?
+    scope: null
+    expected_answer: "Not in the corpus. Filings do not record personal opinions of executives."
+    gold_chunk_ids: []
+    must_abstain: true
+    status: draft
+
+  - id: q038
+    category: unanswerable
+    question: What were Intel's financial results for fiscal 2019?
+    scope: null
+    expected_answer: "Not in the corpus. Intel is covered, but only for fiscal 2021-2024."
+    gold_chunk_ids: []
+    must_abstain: true
+    status: draft
+
+  - id: q043
+    category: unanswerable
+    question: What line of business was Nuvia in before Qualcomm acquired it?
+    scope: null
+    expected_answer: "Not in the corpus. The filings record the acquisition and the Arm litigation but never describe what Nuvia's business was."
+    gold_chunk_ids: []
+    must_abstain: true
+    status: draft
+
+  # --- multi_hop ------------------------------------------------------------
+
+  - id: q039
+    category: multi_hop
+    question: Which companies in fiscal 2024 report both a dependence on TSMC and a concentration of revenue in few customers?
+    scope: {fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q040
+    category: multi_hop
+    question: How does NVIDIA's framing of AI as a risk in fiscal 2024 compare with its framing of AI as an opportunity in the same filing?
+    scope: {ticker: NVDA, fiscal_year: 2024}
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q041
+    category: multi_hop
+    question: Does any company discuss both the CHIPS Act and export restrictions to China within the same fiscal year filing?
+    scope: null
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft
+
+  - id: q042
+    category: multi_hop
+    question: Which companies completed a major acquisition between fiscal 2021 and 2024, and what integration risks did each report?
+    scope: null
+    expected_answer: null
+    gold_chunk_ids: []
+    must_abstain: false
+    status: draft

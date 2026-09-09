@@ -1,0 +1,26 @@
+# --- Ingestion ---
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+python-dotenv>=1.0
+
+# --- Chunking, embeddings, vector store ---
+sentence-transformers>=3.0
+chromadb>=0.5
+
+# --- Hybrid retrieval (lexical half) ---
+rank-bm25>=0.2.2
+
+# --- LLM providers ---
+ollama>=0.3          # local models, free
+anthropic>=0.40      # frontier models, paid (final runs only)
+
+# --- Evaluation & analysis ---
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4    # Cohen's kappa for judge validation
+matplotlib>=3.8
+seaborn>=0.13
+
+# --- Demo app ---
+streamlit>=1.35

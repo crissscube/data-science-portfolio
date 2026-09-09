@@ -1,0 +1,19 @@
+# Raw filings are heavy and freely re-downloadable from SEC EDGAR
+data/raw/
+data/processed/
+
+# The vector store is 200 MB of binaries and is fully reproducible from the
+# chunks by running src/embed.py. Committing it would make the repository
+# unusable to clone for no benefit -- the labels and results below are the
+# artefacts worth versioning, because they cannot be regenerated.
+data/chroma/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
