@@ -1,0 +1,5 @@
+data/raw/
+data/processed/
+outputs/dataset_ofertas.xlsx
+__pycache__/
+*.pyc
