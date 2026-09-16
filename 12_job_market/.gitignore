@@ -1,5 +1,11 @@
+# Raw scrape dumps: 10 MB of provider JSON, not needed to reproduce the analysis.
 data/raw/
-data/processed/
-outputs/dataset_ofertas.xlsx
+
+# The root .gitignore drops every *.csv and *.xlsx across the portfolio.
+# This project publishes its dataset, so the three files it ships are let back in.
+!data/processed/ofertas.csv
+!outputs/revision_ofertas.csv
+!outputs/dataset_ofertas.xlsx
+
 __pycache__/
 *.pyc
